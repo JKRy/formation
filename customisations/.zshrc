@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jessica.ryan/.oh-my-zsh"
+export ZSH="{USERNAME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,14 +72,14 @@ plugins=(git z)
 
 # ZSH_DISABLE_COMPFIX="true"
 POWERLEVEL9K_MODE='awesome-patched'
+# POWERLEVEL9K_COLOR_SCHEME='light'
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs node_version)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{red}>%F{yellow}>%F{green}>%f "
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{red}>%F{yellow}>%F{green}>%f "
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX_BACKGROUND="pink"
 POWERLEVEL9K_NODE_VERSION_BACKGROUND='black'
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -92,8 +92,7 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 
 POWERLEVEL9K_VCS_GIT_ICON='\uE1AA'
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uE1AA'
-
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='darkorange'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 
 POWERLEVEL9K_HIDE_BRANCH_ICON=true
 

@@ -1,0 +1,43 @@
+{
+  // "bracket-pair-colorizer-2.colors": ["#333", "#f57c00", "#9c27b0"],
+  "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
+  "breadcrumbs.enabled": true,
+  "editor.fontFamily": "Operator Mono",
+  "editor.fontSize": 16,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "jsx": {
+      "attr_quotes": "single"
+    }
+  },
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+  "window.openFoldersInNewWindow": "on",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.colorTheme": "GitHub Dark",
+  "liveshare.featureSet": "insiders",
+  "material-icon-theme.folders.theme": "none"
+}

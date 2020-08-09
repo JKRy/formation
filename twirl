@@ -23,8 +23,6 @@ indent="   "
 # Get full directory name of this script
 cwd="$(cd "$(dirname "$0")" && pwd)"
 
-DOTFILES_ROOT=$HOME/.dotfiles
-
 ###############################################################################
 # Utility Functions
 ###############################################################################
@@ -130,81 +128,6 @@ _set_trap() {
 
 }
 
-_link_file() {
-  local src=$1 dst=$2
-
-  local overwrite= backup= skip=
-  local action=
-
-  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
-  then
-
-    if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
-    then
-
-      local currentSrc="$(readlink $dst)"
-
-      if [ "$currentSrc" == "$src" ]
-      then
-
-        skip=true;
-
-      else
-
-        printf "\r   ${yellow}!${reset} File already exists: $dst ($(basename "$src")), what do you want to do?
-     [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all? "
-        read -n 1 action
-
-        case "$action" in
-          o )
-            overwrite=true;;
-          O )
-            overwrite_all=true;;
-          b )
-            backup=true;;
-          B )
-            backup_all=true;;
-          s )
-            skip=true;;
-          S )
-            skip_all=true;;
-          * )
-            ;;
-        esac
-
-      fi
-
-    fi
-
-    overwrite=${overwrite:-$overwrite_all}
-    backup=${backup:-$backup_all}
-    skip=${skip:-$skip_all}
-
-    if [ "$overwrite" == "true" ]
-    then
-      rm -rf "$dst"
-      print_in_green "\n      ✓ deleted $dst"
-    fi
-
-    if [ "$backup" == "true" ]
-    then
-      mv "$dst" "${dst}.backup"
-      print_in_green "\n      ✓ moved $dst to ${dst}.backup"
-    fi
-
-    if [ "$skip" == "true" ]
-    then
-      printf "\n  ${dim}    ✓ $src already linked. Skipped.${reset}"
-    fi
-  fi
-
-  if [ "$skip" != "true" ]  # "false" or empty
-  then
-    ln -s "$1" "$2"
-    print_in_green "\n      ✓ linked $1 to $2"
-  fi
-}
-
 ###############################################################################
 # Print Functions
 ###############################################################################
@@ -221,22 +144,6 @@ print_in_yellow() {
     _print_in_color "$1" 3
 }
 
-print_in_blue() {
-    _print_in_color "$1" 4
-}
-
-print_in_purple() {
-    _print_in_color "$1" 5
-}
-
-print_in_cyan() {
-    _print_in_color "$1" 6
-}
-
-print_in_white() {
-    _print_in_color "$1" 7
-}
-
 print_result() {
 
     if [ "$1" -eq 0 ]; then
@@ -247,10 +154,6 @@ print_result() {
 
     return "$1"
 
-}
-
-print_question() {
-    print_in_yellow "  [?] $1\n"
 }
 
 print_success() {
@@ -411,16 +314,6 @@ mkd() {
     fi
 }
 
-symlink_dotfiles() {
-  local overwrite_all=false backup_all=false skip_all=false
-
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
-  do
-    dst="$HOME/.$(basename "${src%.*}")"
-    _link_file "$src" "$dst"
-  done
-}
-
 ###############################################################################
 # Prompts
 ###############################################################################
@@ -536,15 +429,6 @@ mas_setup() {
     fi
 }
 
-gem_install_or_update() {
-    if gem list "$1" --installed > /dev/null; then
-        gem update "$@"
-    else
-        gem install "$@"
-        rbenv rehash
-    fi
-}
-
 install_brews() {
     if test ! $(brew list | grep $brew); then
         echo_install "Installing $brew"
@@ -562,16 +446,6 @@ install_application_via_brew() {
         print_in_green "${bold}✓ installed!${normal}\n"
     else
     	print_success_muted "$cask already installed. Skipped."
-    fi
-}
-
-install_tap_via_brew() {
-    if [[ ! $(brew tap | grep $tap) ]]; then
-        echo_install "Installing $tap"
-        brew tap $tap >/dev/null
-        print_in_green "${bold}✓ installed!${normal}\n"
-    else
-    	print_success_muted "$tap already installed. Skipped."
     fi
 }
 
@@ -615,11 +489,6 @@ get_github_version() {
 ###############################################################################
 # Text Formatting
 ###############################################################################
-title() {
-    local fmt="$1"; shift
-    printf "\n✦  ${bold}$fmt${normal}\n└─────────────────────────────────────────────────────○\n" "$@"
-}
-
 chapter() {
     local fmt="$1"; shift
     printf "\n✦  ${bold}$((count++)). $fmt${normal}\n└─────────────────────────────────────────────────────○\n" "$@"
@@ -630,31 +499,13 @@ echo_install() {
     printf "  [↓] $fmt " "$@"
 }
 
-todo() {
-    local fmt="$1"; shift
-    printf "  [ ] $fmt\n" "$@"
-}
-
 inform() {
     local fmt="$1"; shift
     printf "   ✦  $fmt\n" "$@"
 }
 
-announce() {
-    local fmt="$1"; shift
-    printf "○───✦ $fmt\n" "$@"
-}
-
 step() {
     printf "\n   ${dot}${underline}$@${reset}\n"
-}
-
-label_blue() {
-    printf "\e[30;46m $1 \033[0m\e[34m $2 \033[0m\n"
-}
-
-label_green() {
-    printf "\e[30;42m $1 \e[0m\e[32m $2 \033[0m\n"
 }
 
 e_lemon_ated() {
@@ -670,3 +521,15 @@ e_lemon_ated() {
 
 "
 }
+
+# fetch_iterm2_color_preset() {
+#     local colordir=color_presets
+
+#     if ! [[ -f $colordir/$1 ]]; then
+#         sudo mkdir -p $HOME/tools/$colordir
+#         sudo wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/$1 -O $HOME/tools/$colordir/$1 &> /dev/null
+#         print_success "${1} downloaded."
+#         else
+#         print_success "${1} already downloaded."
+#     fi
+# }

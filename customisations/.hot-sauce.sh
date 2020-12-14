@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 dotfiles_folder="/Users/$(whoami)/code/personal/dotfiles"
 
-NERDFONTS_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/ryanoasis/nerd-fonts/releases/latest)
-NERDFONTS_VERSION=$(get_github_version $NERDFONTS_RELEASE)
-PATCHED_FONT=$(https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf)
+MESLOFONT_REPO = $(https://github.com/romkatv/powerlevel10k-media/raw/master/)
 
 DIRECTORIES=(
     $HOME/designs
@@ -12,11 +10,11 @@ DIRECTORIES=(
     $HOME/Desktop/screenshots
 )
 
-NERDFONTS=(
-    SpaceMono
-    Hack
-    AnonymousPro
-    Inconsolata
+MESLOFONTS=(
+    MesloLGS%20NF%20Regular.ttf
+    MesloLGS%20NF%20Bold.ttf
+    MesloLGS%20NF%20Italic.ttf
+    MesloLGS%20NF%20Bold%20Italic.ttf
 )
 
 step "Making directories…"
@@ -24,19 +22,11 @@ for dir in ${DIRECTORIES[@]}; do
     mkd $dir
 done
 
-step "Installing patched font"
-if [ ! -d ~/Library/Fonts/SourceCodePro+Powerline+Awesome+Regular ]; then
-    printf "${indent}  [↓] $font "
-    wget -P ~/Library/Fonts $PATCHED_FONT --quiet
-else
-    print_muted "${indent}✓ $font already installed. Skipped."
-fi
-
 step "Installing fonts…"
-for font in ${NERDFONTS[@]}; do
+for font in ${MESLOFONTS[@]}; do
     if [ ! -d ~/Library/Fonts/$font ]; then
         printf "${indent}  [↓] $font "
-        wget -P ~/Library/Fonts https://github.com/ryanoasis/nerd-fonts/releases/download/$NERDFONTS_VERSION/$font.zip --quiet;unzip -q ~/Library/Fonts/$font -d ~/Library/Fonts/$font
+        wget -P ~/Library/Fonts $MESLOFONT_REPO$font --quiet
         print_in_green "${bold}✓ done!${normal}\n"
     else
         print_muted "${indent}✓ $font already installed. Skipped."
@@ -61,6 +51,14 @@ if [ -e $zshrc ]; then
     cp $zshrc $HOME
     print_success ".zshrc file successfully copied"
 else print_success_muted "No .zshrc file found. Skipping"
+fi
+
+step "Copy p10k config"
+local p10_config=$dotfiles_folder/customisations/.p10k.zsh
+if [ -e $p10_config ]; then
+    cp $p10_config $HOME
+    print_success ".p10k.zsh file successfully copied"
+else print_success_muted "No .p10k.zsh file found. Skipping"
 fi
 
 step "Copy vscode settings"

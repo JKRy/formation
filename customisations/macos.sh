@@ -6,7 +6,7 @@
 echo "Configuring Dock"
 
 defaults write com.apple.dock autohide -bool false
-defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock magnification -bool false
 defaults write com.apple.dock "show-recents" -bool false
 defaults write com.apple.dock orientation -string "bottom"
 defaults write com.apple.dock tilesize -integer 38
@@ -79,9 +79,6 @@ defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.7
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
-# Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
-
 defaults write com.apple.screencapture location $HOME/Desktop/screenshots
 
 ###############################################################################
@@ -93,7 +90,6 @@ defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Allow hitting the Backspace key to go to the previous page in history
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
-
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true

@@ -13,9 +13,10 @@ Download the script:
 ```sh
 mkdir -p /Users/$(whoami)/code/personal/dotfiles
 
-curl -L https://github.com/JKRy/formation/tarball/jess-updates | tar -xzv --strip-components 1 &> /dev/null;
+cd /Users/$(whoami)/code/personal/dotfiles
 
-cp /Users/$(whoami)/code/personal/dotfiles/customisations/.hot-sauce.sh /Users/$(whoami)
+curl -L https://github.com/jessicakryan/formation/tarball/jess-updates | tar -xzv --strip-components 1 &> /dev/null;
+
 ```
 
 Review the script (please don't run scripts you don't understand):
@@ -51,22 +52,22 @@ The setup process will install:
 <details>
 <summary>Basic tools:</summary>
 
-- [XCode Command Line Tools](https://developer.apple.com/xcode/downloads/) for developer essentials.
-- [Git](https://git-scm.com/) for version control
-- [Homebrew](http://brew.sh/) for managing operating system libraries.
+-   [XCode Command Line Tools](https://developer.apple.com/xcode/downloads/) for developer essentials.
+-   [Git](https://git-scm.com/) for version control
+-   [Homebrew](http://brew.sh/) for managing operating system libraries.
 </details>
 
 <details>
 <summary>Package Managers:</summary>
 
-- [NVM](https://github.com/creationix/nvm/) for managing and installing multiple versions of [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.org/)
+-   [NVM](https://github.com/creationix/nvm/) for managing and installing multiple versions of [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.org/)
 </details>
 
 <details>
 <summary>CLI Tools & Utilities:</summary>
 
-- [Hotel](https://github.com/typicode/hotel), a simple process manager for developers
-- [mas](https://github.com/mas-cli/mas) Mac App Store command line interface
+-   [Hotel](https://github.com/typicode/hotel), a simple process manager for developers
+-   [mas](https://github.com/mas-cli/mas) Mac App Store command line interface
 </details>
 
 ### Apps
@@ -74,63 +75,63 @@ The setup process will install:
 <details>
 <summary>Productivity</summary>
 
-- [Spark](https://sparkmailapp.com/) for a better mail client.
-- [Alfred](https://www.alfredapp.com/) for increased productivity and efficiency with macOS.
+-   [Spark](https://sparkmailapp.com/) for a better mail client.
+-   [Alfred](https://www.alfredapp.com/) for increased productivity and efficiency with macOS.
 </details>
 
 <details>
 <summary>Development</summary>
 
-- [iTerm](https://www.iterm2.com/) for a better terminal.
-- [Visual Studio Code](https://code.visualstudio.com/) IDE
-- [Trailer](http://ptsochantaris.github.io/trailer/) GitHub Workflow
-- [Insomnia](https://insomnia.rest/download/#mac) API Client
-- [Charles](https://www.charlesproxy.com/)
-- [Docker](https://www.docker.com/)
+-   [iTerm](https://www.iterm2.com/) for a better terminal.
+-   [Visual Studio Code](https://code.visualstudio.com/) IDE
+-   [Trailer](http://ptsochantaris.github.io/trailer/) GitHub Workflow
+-   [Insomnia](https://insomnia.rest/download/#mac) API Client
+-   [Charles](https://www.charlesproxy.com/)
+-   [Docker](https://www.docker.com/)
 
 </details>
 
 <details>
 <summary>Communication</summary>
 
-- [Bear](http://www.bear-writer.com/) for writing and previewing markdown.
-- [Teams](https://www.microsoft.com/en-nz/microsoft-365/microsoft-teams/download-app)
-- [Zoom](https://zoom.us/)
-- [Whatsapp](https://www.whatsapp.com/)
+-   [Bear](http://www.bear-writer.com/) for writing and previewing markdown.
+-   [Teams](https://www.microsoft.com/en-nz/microsoft-365/microsoft-teams/download-app)
+-   [Zoom](https://zoom.us/)
+-   [Whatsapp](https://www.whatsapp.com/)
 </details>
 
 <details>
 <summary>Utilities</summary>
 
-- [Dashlane](https://www.dashlane.com/) for password management.
-- [Spectacle](https://www.spectacleapp.com/) for better window management.
-- [Encrypto](https://macpaw.com/encrypto) for securing files.
-- [Private Internet Access](https://www.privateinternetaccess.com/) for privacy.
-- [Karabiner](https://pqrs.org/osx/karabiner/) for keyboard mapping.
-- [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704) keep-awake utility
-- [EasyFind](https://apps.apple.com/us/app/easyfind/id411673888)
-- [Purevpn](https://www.purevpn.com/)
-- [Trello](https://trello.com/)
+-   [Dashlane](https://www.dashlane.com/) for password management.
+-   [Spectacle](https://www.spectacleapp.com/) for better window management.
+-   [Encrypto](https://macpaw.com/encrypto) for securing files.
+-   [Private Internet Access](https://www.privateinternetaccess.com/) for privacy.
+-   [Karabiner](https://pqrs.org/osx/karabiner/) for keyboard mapping.
+-   [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704) keep-awake utility
+-   [EasyFind](https://apps.apple.com/us/app/easyfind/id411673888)
+-   [Purevpn](https://www.purevpn.com/)
+-   [Trello](https://trello.com/)
 
 </details>
 
 <details>
 <summary>Miscellaneous</summary>
 
-- [Rocket](http://matthewpalmer.net/rocket/) for Slack-like emojis.
-- [Spotify](https://www.spotify.com/) for music.
-- [VLC](http://www.videolan.org/) for a better media player.
-- [Skitch](https://apps.apple.com/us/app/skitch-snap-mark-up-share/id425955336?mt=12) for image mark up
-- [Adobe Acrobat Reader](https://get.adobe.com/reader/)
+-   [Rocket](http://matthewpalmer.net/rocket/) for Slack-like emojis.
+-   [Spotify](https://www.spotify.com/) for music.
+-   [VLC](http://www.videolan.org/) for a better media player.
+-   [Skitch](https://apps.apple.com/us/app/skitch-snap-mark-up-share/id425955336?mt=12) for image mark up
+-   [Adobe Acrobat Reader](https://get.adobe.com/reader/)
 </details>
 
 <details>
 <summary>Browsers</summary>
 
-- [Blisk](https://blisk.io/) for cross-device web development.
-- [Chrome](https://www.google.com/chrome/browser/desktop/) for fast and free web browsing.
-- [MicrosoftEdge](https://www.microsoft.com/en-us/edge)
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+-   [Blisk](https://blisk.io/) for cross-device web development.
+-   [Chrome](https://www.google.com/chrome/browser/desktop/) for fast and free web browsing.
+-   [MicrosoftEdge](https://www.microsoft.com/en-us/edge)
+-   [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 </details>
 
@@ -197,8 +198,8 @@ Cask does not recognize applications installed outside of Homebrew Cask – in t
 
 Inspiration and code was taken from many sources, including:
 
-- [Mathias Bynens'](https://github.com/mathiasbynens) [dotfiles](https://github.com/mathiasbynens/dotfiles)
-- thoughtbot's [laptop](https://github.com/thoughtbot/laptop/)
+-   [Mathias Bynens'](https://github.com/mathiasbynens) [dotfiles](https://github.com/mathiasbynens/dotfiles)
+-   thoughtbot's [laptop](https://github.com/thoughtbot/laptop/)
 
 ## 📜 License
 

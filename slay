@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+dotfiles_folder="/Users/$(whoami)/code/personal/dotfiles"
 
 ###############################################################################
 # ERROR: Let the user know if the script fails
@@ -90,7 +91,7 @@ fi
 # -----------------------------------------------------------------------------
 # ZSH
 # -----------------------------------------------------------------------------
-local zshdir=$HOME/.oh-my-zsh
+zshdir=$HOME/.oh-my-zsh
 
 if ! [[ -d $zshdir ]]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -102,7 +103,7 @@ fi
 # -----------------------------------------------------------------------------
 # ZSH - Powerline10k
 # -----------------------------------------------------------------------------
-local p10dir=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
+p10dir=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
 
 if ! [[ -d $p10dir ]]; then
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -233,14 +234,14 @@ fi
 # OPTIONAL: Customizations
 ###############################################################################
 chapter "Adding hot sauce…"
-if [ -f "$HOME/.hot-sauce" ]; then
+if [ -f "$cwd/customisations/.hot-sauce" ]; then
 	if ask "Do you want to add hot sauce?" Y; then
-		. "$HOME/.hot-sauce"; printf "\n  You got hot sauce in your bag. 🔥 ${bold}Swag.${normal}\n";
+		. "$cwd/customisations/.hot-sauce"; printf "\n  You got hot sauce in your bag. 🔥 ${bold}Swag.${normal}\n";
 	else
 		print_success_muted "Hot sauce declined. Skipped.";
 	fi
 else
-	print_warning "No ~/.hot-sauce found. Skipping."
+	print_warning "No $cwd/customisations/.hot-sauce found. Skipping."
 fi
 
 ###############################################################################

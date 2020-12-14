@@ -19,12 +19,12 @@ MESLOFONTS=(
 
 step "Making directories…"
 for dir in ${DIRECTORIES[@]}; do
-    mkd $dir
+    mkdir -p $dir
 done
 
 step "Installing fonts…"
 for font in ${MESLOFONTS[@]}; do
-    if [ ! -d ~/Library/Fonts/$font ]; then
+    if [ ! -f ~/Library/Fonts/$font ]; then
         printf "${indent}  [↓] $font "
         wget -P ~/Library/Fonts $MESLOFONT_REPO$font --quiet
         print_in_green "${bold}✓ done!${normal}\n"
@@ -34,7 +34,7 @@ for font in ${MESLOFONTS[@]}; do
 done
 
 step "Set up iTerm2 Profiles"
-local iterm_folder="${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
+iterm_folder="${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
 
 sudo mkdir -p $iterm_folder
 
@@ -46,7 +46,7 @@ else
 fi
 
 step "Copy zshrc"
-local zshrc=$dotfiles_folder/customisations/.zshrc
+zshrc=$dotfiles_folder/customisations/.zshrc
 if [ -e $zshrc ]; then
     cp $zshrc $HOME
     print_success ".zshrc file successfully copied"
@@ -54,7 +54,7 @@ else print_success_muted "No .zshrc file found. Skipping"
 fi
 
 step "Copy p10k config"
-local p10_config=$dotfiles_folder/customisations/.p10k.zsh
+p10_config=$dotfiles_folder/customisations/.p10k.zsh
 if [ -e $p10_config ]; then
     cp $p10_config $HOME
     print_success ".p10k.zsh file successfully copied"
@@ -62,7 +62,7 @@ else print_success_muted "No .p10k.zsh file found. Skipping"
 fi
 
 step "Copy vscode settings"
-local code_settings=$dotfiles_folder/customisations/code/settings.json
+code_settings=$dotfiles_folder/customisations/code/settings.json
 if [ -e $code_settings ]; then
     cp $code_settings ~/Library/Application\ Support/Code/User/
      print_success "vscode settings json successfully copied"
@@ -70,7 +70,7 @@ else print_success_muted "No settings file found. Skipping"
 fi
 
 step "Copy vscode keybindings"
-local code_keybindings=$dotfiles_folder/customisations/code/keybindings.json
+code_keybindings=$dotfiles_folder/customisations/code/keybindings.json
 if [ -e $code_keybindings ]; then
     cp $code_keybindings ~/Library/Application\ Support/Code/User/
      print_success "vscode keybindings file successfully copied"
@@ -78,7 +78,7 @@ else print_success_muted "No keybindings file found. Skipping"
 fi
 
 step "Copy gitconfig"
-local gitconfig=$dotfiles_folder/customisations/.gitconfig
+gitconfig=$dotfiles_folder/customisations/.gitconfig
 if [ -e $gitconfig ]; then
     cp $gitconfig $HOME
      print_success ".gitconfig file successfully copied"

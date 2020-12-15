@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-dotfiles_folder="/Users/$(whoami)/code/personal/dotfiles"
 
 ###############################################################################
 # ERROR: Let the user know if the script fails
@@ -140,7 +139,7 @@ else
 	print_success_muted "Homebrew already installed. Skipping."
 fi
 
-if brew list | grep -Fq brew-cask; then
+if brew list --formula | grep -Fq brew-cask; then
 	step "Uninstalling old Homebrew-Cask…"
 	brew uninstall --force brew-cask
 	print_success "Homebrew-Cask uninstalled!"
@@ -166,13 +165,13 @@ brew update
 ###############################################################################
 # INSTALL: casks
 ###############################################################################
-if [ -e $cwd/swag/casks ]; then
-	chapter "Installing apps via Homebrew…"
+# if [ -e $cwd/swag/casks ]; then
+# 	chapter "Installing apps via Homebrew…"
 
-	for cask in $(<$cwd/swag/casks); do
-	    install_application_via_brew $cask
-	done
-fi
+# 	for cask in $(<$cwd/swag/casks); do
+# 	    install_application_via_brew $cask
+# 	done
+# fi
 
 ###############################################################################
 # INSTALL: Mac App Store Apps

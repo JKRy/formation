@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ###############################################################################
 # Dock                                                                        #
@@ -73,9 +73,6 @@ defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextr
 
 ###############################################################################
 
-# Set accent color to orange
-defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961"
-
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
@@ -137,7 +134,14 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 echo "Killing all affected apps to apply the changes"
 
+APPS=(
+    cfprefsd
+    Dock
+    Finder
+    SystemUIServer
+)
+
 # Kill all affected apps
-for app in "cfprefsd" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Photos"; do
+for app in ${APPS[@]}; do
     killall "${app}" > /dev/null 2>&1
 done

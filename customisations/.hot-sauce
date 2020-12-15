@@ -38,6 +38,10 @@ else
     print_success_muted "${indent}✓ MesloLGS NF Bold Italic already installed. Skipped."
 fi
 
+step "Download iTerm2 material color scheme"
+wget -P $HOME/tools https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors
+print_success "${bold}✓ done!${normal}\n"
+
 step "Set up iTerm2 Profiles"
 iterm_folder="${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
 
@@ -50,6 +54,15 @@ else
     print_success_muted "Path does not exist: ${iterm_folder}. Skipped"
 fi
 
+step "Install ZSH Completions"
+zshdir=$HOME/.oh-my-zsh
+
+if [[ -d $zshdir ]]; then
+    git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+    print_success "zsh completions plugin installed"
+else print_success_muted "zsh completions plugin not installed. Skipping"
+fi
+
 step "Copy zshrc"
 zshrc=$cwd/customisations/.zshrc
 if [ -e $zshrc ]; then
@@ -57,6 +70,7 @@ if [ -e $zshrc ]; then
     print_success ".zshrc file successfully copied"
 else print_success_muted "No .zshrc file found. Skipping"
 fi
+
 
 step "Copy p10k config"
 p10_config=$cwd/customisations/.p10k.zsh

@@ -3,7 +3,7 @@
     "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
     "breadcrumbs.enabled": true,
     "editor.fontFamily": "Dank Mono",
-    "editor.fontSize": 17,
+    "editor.fontSize": 16,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "typescript": "typescriptreact"
@@ -14,7 +14,7 @@
         }
     },
     "files.autoSave": "afterDelay",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontFamily": "'MesloLGS NF'",
     "window.openFoldersInNewWindow": "on",
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -39,8 +39,7 @@
     },
     "material-icon-theme.folders.theme": "specific",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Relaxed",
-    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Material Theme High Contrast",
     "typescript.updateImportsOnFileMove.enabled": "never",
     "material-icon-theme.folders.color": "#90a4ae",
     "workbench.colorCustomizations": {

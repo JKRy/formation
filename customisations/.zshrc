@@ -58,7 +58,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
+plugins=(zsh-completions git z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,6 +96,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -U add-zsh-hook
+
 load-nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then
     nvm use
@@ -119,4 +120,3 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

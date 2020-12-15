@@ -5,6 +5,9 @@ cmckni3.dark-plus-mono
 CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 eamodio.gitlens
+Equinusocio.vsc-community-material-theme
+Equinusocio.vsc-material-theme
+equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
 GitHub.github-vscode-theme
 GitHub.vscode-pull-request-github
@@ -21,4 +24,4 @@ swyphcosmo.spellchecker
 WallabyJs.quokka-vscode
 wayou.vscode-todo-highlight
 xabikos.JavaScriptSnippets
-zhuangtongfa.One-dark-pro
+zhuangtongfa.material-theme

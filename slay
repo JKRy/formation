@@ -88,29 +88,6 @@ if [ ! -d "$HOME/.bin/" ]; then
 fi
 
 # -----------------------------------------------------------------------------
-# ZSH
-# -----------------------------------------------------------------------------
-zshdir=$HOME/.oh-my-zsh
-
-if ! [[ -d $zshdir ]]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	print_success "ZSH successfully installed"
-else
-	print_success_muted "ZSH already installed. Skipping"
-fi
-
-# -----------------------------------------------------------------------------
-# ZSH - Powerline10k
-# -----------------------------------------------------------------------------
-p10dir=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
-
-if ! [[ -d $p10dir ]]; then
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-	print_success "Powerlevel 10k successfully installed"
-else
-	print_success_muted "Powerlevel 10K already installed. Skipping"
-fi
-# -----------------------------------------------------------------------------
 # NVM
 # -----------------------------------------------------------------------------
 if [ -x nvm ]; then
@@ -171,6 +148,30 @@ if [ -e $cwd/swag/casks ]; then
 	for cask in $(<$cwd/swag/casks); do
 	    install_application_via_brew $cask
 	done
+fi
+
+# -----------------------------------------------------------------------------
+# ZSH
+# -----------------------------------------------------------------------------
+zshdir=$HOME/.oh-my-zsh
+
+if ! [[ -d $zshdir ]]; then
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	print_success "ZSH successfully installed"
+else
+	print_success_muted "ZSH already installed. Skipping"
+fi
+
+# -----------------------------------------------------------------------------
+# ZSH - Powerline10k
+# -----------------------------------------------------------------------------
+p10dir=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
+
+if ! [[ -d $p10dir ]]; then
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+	print_success "Powerlevel 10k successfully installed"
+else
+	print_success_muted "Powerlevel 10K already installed. Skipping"
 fi
 
 ###############################################################################

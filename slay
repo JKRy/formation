@@ -90,19 +90,19 @@ fi
 # -----------------------------------------------------------------------------
 # NVM
 # -----------------------------------------------------------------------------
-if [ -x nvm ]; then
-	step "Installing NVM…"
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-	print_success "NVM installed!"
-	step "Installing latest Node…"
-	nvm install node
-	nvm use node
-	nvm run node --version
-	nodev=$(node -v)
-	print_success "Using Node $nodev!"
-else
-	print_success_muted "NVM/Node already installed. Skipping."
-fi
+# if [ -x nvm ]; then
+# 	step "Installing NVM…"
+# 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+# 	print_success "NVM installed!"
+# 	step "Installing latest Node…"
+# 	nvm install node
+# 	nvm use node
+# 	nvm run node --version
+# 	nodev=$(node -v)
+# 	print_success "Using Node $nodev!"
+# else
+# 	print_success_muted "NVM/Node already installed. Skipping."
+# fi
 
 # -----------------------------------------------------------------------------
 # Homebrew
@@ -209,15 +209,15 @@ brew cleanup 2> /dev/null
 ###############################################################################
 # INSTALL: npm packages
 ###############################################################################
-if [ -e $cwd/swag/npm ]; then
-	chapter "Installing npm packages…"
+# if [ -e $cwd/swag/npm ]; then
+# 	chapter "Installing npm packages…"
 
-	for pkg in $(<$cwd/swag/npm); do
-		KEY="${pkg%%::*}"
-		VALUE="${pkg##*::}"
-		install_npm_packages $KEY $VALUE
-	done
-fi
+# 	for pkg in $(<$cwd/swag/npm); do
+# 		KEY="${pkg%%::*}"
+# 		VALUE="${pkg##*::}"
+# 		install_npm_packages $KEY $VALUE
+# 	done
+# fi
 
 ###############################################################################
 # INSTALL: vscode extensions

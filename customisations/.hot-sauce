@@ -39,28 +39,34 @@ else
 fi
 
 step "Download iTerm2 material color scheme"
-wget -P $HOME/tools https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors
-print_success "${bold}✓ done!${normal}\n"
+if [[ ! -f $HOME/tools/material-design-colors.itermcolors ]]; then
+    wget -P $HOME/tools https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors
+    print_success "${bold}✓ done!${normal}\n"
+else
+    print_success_muted "Material color scheme already installed. Skipping"
+fi
 
 step "Set up iTerm2 Profiles"
+
+sudo mkdir -p $HOME/Library/Application\ Support/iTerm2/DynamicProfiles
+
 iterm_folder=$HOME/Library/Application\ Support/iTerm2/DynamicProfiles
 
-sudo mkdir -p $iterm_folder
-
 if [[ -d $iterm_folder ]]; then
-    cp $cwd/customisations/iterm/*.json iterm_folder
+    cp -a $cwd/customisations/iterm/. iterm_folder
     print_success "Successfully copied profiles - enable via iTerm preferences"
 else
     print_success_muted "Path does not exist: ${iterm_folder}. Skipped"
 fi
 
 step "Install ZSH Completions"
-zshdir=$HOME/.oh-my-zsh
+zsh_completions_dir=$HOME/.oh-my-zsh/custom/plugins/zsh-completions
 
-if [[ -d $zshdir ]]; then
+if [[ ! -d $zsh_completions_dir ]]; then
     git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
     print_success "zsh completions plugin installed"
-else print_success_muted "zsh completions plugin not installed. Skipping"
+else
+    print_success_muted "zsh completions plugin already installed. Skipping"
 fi
 
 step "Copy zshrc"

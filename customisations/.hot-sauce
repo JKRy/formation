@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 DIRECTORIES=(
-    $HOME/designs
     $HOME/code/work
     $HOME/tools
     $HOME/Desktop/screenshots
@@ -44,6 +43,14 @@ if [[ ! -f $HOME/tools/material-design-colors.itermcolors ]]; then
     print_success "${bold}✓ done!${normal}\n"
 else
     print_success_muted "Material color scheme already installed. Skipping"
+fi
+
+step "Download iTerm2 monokai pro color scheme"
+if [[ ! -f $HOME/tools/monokai_pro.itermcolors ]]; then
+    wget -P $HOME/tools https://raw.githubusercontent.com/ayatmaulana/iterm2-monokai-pro/master/monokai_pro.itermcolors
+    print_success "${bold}✓ done!${normal}\n"
+else
+    print_success_muted "Monokai Pro color scheme already installed. Skipping"
 fi
 
 step "Set up iTerm2 Profiles"

@@ -1,9 +1,10 @@
 {
-    // "bracket-pair-colorizer-2.colors": ["#333", "#f57c00", "#9c27b0"],
+    // "bracket-pair-colorizer-2.colors": ["#f57c00", "#9c27b0", "#333"],
     "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
+    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
     "breadcrumbs.enabled": true,
     "editor.fontFamily": "Dank Mono",
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "typescript": "typescriptreact"
@@ -14,7 +15,7 @@
         }
     },
     "files.autoSave": "afterDelay",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "'MesloLGS NF'",
     "window.openFoldersInNewWindow": "on",
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -39,16 +40,18 @@
     },
     "material-icon-theme.folders.theme": "specific",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Material Theme High Contrast",
-    "typescript.updateImportsOnFileMove.enabled": "never",
     "material-icon-theme.folders.color": "#90a4ae",
     "workbench.colorCustomizations": {
         "[Relaxed]": {
             "diffEditor.insertedTextBackground": "#6a880036",
             "diffEditor.removedTextBackground": "#a3050056"
+        },
+        "[Monokai Pro]": {
+            "list.focusBackground": "#FFD55E",
+            "list.focusForeground": "#2D2A2E",
+            "sideBar.foreground": "#8BADC1"
         }
     },
-    "githubPullRequests.defaultMergeMethod": "squash",
     "spellchecker.language": "en_GB-ise",
     "workbench.fontAliasing": "auto",
     "editor.multiCursorModifier": "alt",
@@ -56,5 +59,7 @@
     "prettier.tabWidth": 4,
     "prettier.trailingComma": "none",
     "prettier.singleQuote": true,
-    "prettier.bracketSpacing": false
+    "prettier.bracketSpacing": false,
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "GitHub Light Default"
 }

@@ -108,3 +108,15 @@
 	ss = stash save
 	sw = stash show
 	#############
+[core]
+    pager = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+	features = side-by-side line-numbers decorations
+
+[interactive]
+    diffFilter = delta --color-only

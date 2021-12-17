@@ -54,16 +54,13 @@ else
 fi
 
 step "Set up iTerm2 Profiles"
-
 sudo mkdir -p $HOME/Library/Application\ Support/iTerm2/DynamicProfiles
 
-iterm_folder=$HOME/Library/Application\ Support/iTerm2/DynamicProfiles
-
-if [[ -d $iterm_folder ]]; then
-    cp -a $cwd/customisations/iterm/. iterm_folder
+if [[ -d $HOME/Library/Application\ Support/iTerm2/DynamicProfiles ]]; then
+    cp -a $cwd/customisations/iterm/. $HOME/Library/Application\ Support/iTerm2/DynamicProfiles
     print_success "Successfully copied profiles - enable via iTerm preferences"
 else
-    print_success_muted "Path does not exist: ${iterm_folder}. Skipped"
+    print_success_muted "Path does not exist. Skipped"
 fi
 
 step "Install ZSH Completions"

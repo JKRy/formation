@@ -1,65 +1,70 @@
 {
-    // "bracket-pair-colorizer-2.colors": ["#f57c00", "#9c27b0", "#333"],
-    "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
-    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
-    "breadcrumbs.enabled": true,
-    "editor.fontFamily": "Dank Mono",
-    "editor.fontSize": 15,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "typescript": "typescriptreact"
-    },
-    "emmet.syntaxProfiles": {
-        "jsx": {
-            "attr_quotes": "single"
-        }
-    },
-    "files.autoSave": "afterDelay",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "'MesloLGS NF'",
-    "window.openFoldersInNewWindow": "on",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontLigatures": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "material-icon-theme.folders.theme": "specific",
-    "editor.minimap.enabled": false,
-    "material-icon-theme.folders.color": "#90a4ae",
-    "workbench.colorCustomizations": {
-        "[Relaxed]": {
-            "diffEditor.insertedTextBackground": "#6a880036",
-            "diffEditor.removedTextBackground": "#a3050056"
-        },
-        "[Monokai Pro]": {
-            "list.focusBackground": "#FFD55E",
-            "list.focusForeground": "#2D2A2E",
-            "sideBar.foreground": "#8BADC1"
-        }
-    },
-    "spellchecker.language": "en_GB-ise",
-    "workbench.fontAliasing": "auto",
-    "editor.multiCursorModifier": "alt",
-    "prettier.arrowParens": "avoid",
-    "prettier.tabWidth": 4,
-    "prettier.trailingComma": "none",
-    "prettier.singleQuote": true,
-    "prettier.bracketSpacing": false,
-    "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "GitHub Light Default"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.autoDetectColorScheme": true,
+  "editor.formatOnSave": true,
+  "prettier.bracketSpacing": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+    "typescript": "typescriptreact",
+    "javascript": "javascriptreact"
+  },
+  "editor.formatOnType": true,
+  "eslint.alwaysShowStatus": true,
+  "breadcrumbs.enabled": true,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "spellchecker.language": "en_GB-ise",
+  "editor.fontLigatures": true,
+  "workbench.preferredLightColorTheme": "One Dark Pro Darker",
+  "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+  "editor.accessibilitySupport": "off",
+  "window.openFoldersInNewWindow": "on",
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "alt",
+  "emmet.syntaxProfiles": {
+    "jsx": {
+      "attr_quotes": "single"
+    }
+  },
+  "editor.minimap.enabled": false,
+  "files.autoSave": "afterDelay",
+  "gitlens.codeLens.authors.enabled": false,
+  "workbench.panel.defaultLocation": "right",
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true,
+  "terminal.integrated.fontSize": 15,
+  "editor.fontSize": 17,
+  "prettier.arrowParens": "avoid",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.fontAliasing": "auto",
+  "material-icon-theme.folders.theme": "none",
+  "editor.formatOnPaste": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontFamily": "Dank Mono",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "window.zoomLevel": -1,
+  "explorer.autoReveal": false
 }

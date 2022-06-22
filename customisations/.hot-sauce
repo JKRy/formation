@@ -82,12 +82,12 @@ else print_success_muted "No .zshrc file found. Skipping"
 fi
 
 
-step "Copy p10k config"
-p10_config=$cwd/customisations/.p10k.zsh
+step "Copy p10k-robbyrussell config"
+p10_config=$cwd/customisations/.p10k-robbyrussell.zsh
 if [ -e $p10_config ]; then
-    cp $p10_config $HOME
-    print_success ".p10k.zsh file successfully copied"
-else print_success_muted "No .p10k.zsh file found. Skipping"
+    cp $p10_config $HOME/.oh-my-zsh/custom/themes/powerlevel10k/config
+    print_success ".p10k-robbyrussell.zsh file successfully copied"
+else print_success_muted "No .p10k-robbyrussell.zsh file found. Skipping"
 fi
 
 step "Copy vscode settings"

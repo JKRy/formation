@@ -1,9 +1,5 @@
 {
-  "material-icon-theme.activeIconPack": "react",
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "workbench.colorTheme": "Better Solarized Light",
+  "workbench.colorTheme": "Gruvbox Light Hard",
   "emmet.includeLanguages": {
     "typescript": "typescriptreact",
     "javascript": "javascriptreact"
@@ -32,17 +28,11 @@
     }
   },
   "window.openFoldersInNewWindow": "on",
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "material-icon-theme.folders.theme": "specific",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "files.autoSave": "afterDelay",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "breadcrumbs.enabled": true,
-  "workbench.preferredLightColorTheme": "Better Solarized Light",
+  "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
@@ -56,25 +46,30 @@
   "workbench.fontAliasing": "auto",
   "editor.multiCursorModifier": "alt",
   "gitlens.codeLens.recentChange.enabled": false,
-  "workbench.preferredDarkColorTheme": "Relaxed",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "sync.gist": "f8b68097cda54831c4825edb2851c0d9",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "prettier.trailingComma": "es5",
   "editor.fontLigatures": true,
   "gitlens.codeLens.authors.enabled": false,
   "workbench.iconTheme": "vscode-icons",
   "editor.formatOnType": true,
   "terminal.integrated.fontFamily": "MesloLGS NF",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "window.autoDetectColorScheme": true,
   "prettier.bracketSpacing": true,

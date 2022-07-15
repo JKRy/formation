@@ -6,36 +6,10 @@ DIRECTORIES=(
     $HOME/Desktop/screenshots
 )
 
-MESLOFONTS=(
-    Regular.ttf
-    Bold.ttf
-    Italic.ttf
-)
-
 step "Making directories…"
 for dir in ${DIRECTORIES[@]}; do
     mkdir -p $dir
 done
-
-step "Installing fonts…"
-for font in ${MESLOFONTS[@]}; do
-    if [ ! -e ~/Library/Fonts/MesloLGS\ NF\ $font ]; then
-        printf "${indent}  [↓] $font "
-        wget -P ~/Library/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20$font --quiet
-        print_success "${bold}✓ done!${normal}\n"
-    else
-        print_success_muted "${indent}✓ $font already installed. Skipped."
-    fi
-done
-
-step "Installing Meslo Bold Italic font"
-if [ ! -e ~/Library/Fonts/MesloLGS\ NF\ Bold\ Italic.ttf ]; then
-    printf "${indent}  [↓] MesloLGS NF Bold Italic"
-    wget -P ~/Library/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --quiet
-    print_success "${bold}✓ done!${normal}\n"
-else
-    print_success_muted "${indent}✓ MesloLGS NF Bold Italic already installed. Skipped."
-fi
 
 step "Download iTerm2 material color scheme"
 if [[ ! -f $HOME/tools/material-design-colors.itermcolors ]]; then
@@ -73,21 +47,20 @@ else
     print_success_muted "zsh completions plugin already installed. Skipping"
 fi
 
+step "Copy posh theme prompt"
+poshtheme=$cwd/customisations/posh-theme.json
+if [ -e $poshtheme ]; then
+    cp $poshtheme $HOME/tools
+    print_success "posh theme file successfully copied"
+else print_success_muted "No posh theme file found. Skipping"
+fi
+
 step "Copy zshrc"
 zshrc=$cwd/customisations/.zshrc
 if [ -e $zshrc ]; then
     cp $zshrc $HOME
     print_success ".zshrc file successfully copied"
 else print_success_muted "No .zshrc file found. Skipping"
-fi
-
-
-step "Copy p10k-robbyrussell config"
-p10_config=$cwd/customisations/.p10k-robbyrussell.zsh
-if [ -e $p10_config ]; then
-    cp $p10_config $HOME/.oh-my-zsh/custom/themes/powerlevel10k/config
-    print_success ".p10k-robbyrussell.zsh file successfully copied"
-else print_success_muted "No .p10k-robbyrussell.zsh file found. Skipping"
 fi
 
 step "Copy vscode settings"

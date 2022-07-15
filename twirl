@@ -434,6 +434,7 @@ install_brews() {
         echo_install "Installing $brew"
 		brew install $brew >/dev/null
 		print_in_green "${bold}✓ installed!${normal}\n"
+		print_in_green "To install fonts run `oh-my-posh font install`\n"
 	else
 		print_success_muted "$brew already installed. Skipped."
     fi

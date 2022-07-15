@@ -162,18 +162,6 @@ else
 	print_success_muted "ZSH already installed. Skipping"
 fi
 
-# -----------------------------------------------------------------------------
-# ZSH - Powerline10k
-# -----------------------------------------------------------------------------
-p10dir=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
-
-if ! [[ -d $p10dir ]]; then
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-	print_success "Powerlevel 10k successfully installed"
-else
-	print_success_muted "Powerlevel 10K already installed. Skipping"
-fi
-
 ###############################################################################
 # INSTALL: Mac App Store Apps
 ###############################################################################

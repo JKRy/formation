@@ -55,6 +55,14 @@ if [ -e $poshtheme ]; then
 else print_success_muted "No posh theme file found. Skipping"
 fi
 
+step "Copy mojada prompt"
+mojadaposhtheme=$cwd/customisations/mojada.json
+if [ -e $mojadaposhtheme ]; then
+    cp $mojadaposhtheme $HOME/tools
+    print_success "mojada posh theme file successfully copied"
+else print_success_muted "No mojada posh theme file found. Skipping"
+fi
+
 step "Copy zshrc"
 zshrc=$cwd/customisations/.zshrc
 if [ -e $zshrc ]; then

@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 
 ###############################################################################
+# Custom Accents                                                              #
+###############################################################################
+echo "Configuring Custom Accents"
+
+defaults write -g NSColorSimulateHardwareAccent -bool YES
+
+# defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 3 # Yellow
+# defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 4 # Green
+defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 5 # Blue
+# defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 6 # Red
+# defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 7 # Purple
+# defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 8 # Orange
+
+###############################################################################
 # Dock                                                                        #
 ###############################################################################
 echo "Configuring Dock"

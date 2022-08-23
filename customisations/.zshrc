@@ -1,7 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
-eval "$(oh-my-posh init zsh --config $HOME/tools/posh-theme.json)"
+eval "$(oh-my-posh init zsh --config $HOME/tools/mojada.json)"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$(go env GOPATH)/bin:/usr/local/bin:/Users/jessicaryan/Library/Python/3.8/bin:$PATH
